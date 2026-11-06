@@ -1,0 +1,25 @@
+{
+  "plan_file_recorded_at": "2026-10-07T14:14:23+02:00",
+  "note": "The checkpoint and two evaluated tasks were selected before the final run began; this file was written after the first cabinet rollout. A third initial bowl goal (stove) was considered at 14:17:41 after 16 cabinet results, then its waiting job was canceled at 14:21:11 before any stove final rollout because plate throughput made completion before the interview deadline unlikely. The checkpoint, reset list, horizon, and startup protocol stayed frozen; all completed task results will be reported regardless of success.",
+  "checkpoint": "outputs/stage7/frozen_epoch06.ckpt",
+  "checkpoint_sha256": "3731f123462be5bee742cfcb45a595386b68a5963150e1a7079328315eca36cf",
+  "manifest": "data/manifests/libero_goal_stage6.json",
+  "selection_basis": "Stage 6 development results; first-report fixed-reset evaluation includes the strongest bowl goal and initial plate goal",
+  "tasks": [
+    "put_the_bowl_on_top_of_the_cabinet",
+    "put_the_bowl_on_the_plate"
+  ],
+  "reset_indices": [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39],
+  "seed_base": 20261007,
+  "horizon": 600,
+  "settling_steps": 10,
+  "settling_gripper": -1,
+  "instruction_mode": "correct",
+  "exploratory_text_ablation": {
+    "recorded_at": "2026-10-07T14:25:33+02:00",
+    "task": "put_the_bowl_on_top_of_the_cabinet",
+    "instruction_mode": "blank",
+    "reset_indices": [20,21,22,23,24],
+    "selection_note": "Added after cabinet correct-prompt outcomes were visible, as an exploratory same-reset comparison; report separately, never as a preregistered final test."
+  }
+}

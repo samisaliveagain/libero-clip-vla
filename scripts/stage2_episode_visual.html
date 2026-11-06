@@ -1,0 +1,84 @@
+<div id="stage2-recorded-episode">
+  <style>
+    #stage2-recorded-episode .episode-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+    #stage2-recorded-episode .episode-image {width:100%;max-width:320px;display:block;image-rendering:auto}
+    #stage2-recorded-episode .command-row {display:grid;grid-template-columns:64px minmax(0,1fr) 60px;gap:10px;align-items:center;margin:14px 0}
+    #stage2-recorded-episode .command-track {height:12px;background:var(--muted);position:relative}
+    #stage2-recorded-episode .command-mark {height:100%;position:absolute;background:var(--viz-series-1)}
+    #stage2-recorded-episode .command-zero {position:absolute;left:50%;top:-3px;height:18px;width:1px;background:var(--border)}
+    #stage2-recorded-episode .command-scale {display:flex;justify-content:space-between;margin:0 70px 0 74px;color:var(--muted-foreground)}
+    #stage2-recorded-episode .episode-detail {margin-top:12px}
+    @media(max-width:560px){#stage2-recorded-episode .episode-layout {grid-template-columns:1fr;gap:16px}}
+  </style>
+  <h3>One recorded demonstration: bowl on plate</h3>
+  <div class="episode-layout">
+    <div>
+      <img class="episode-image" data-image alt="Recorded external camera view of the Panda moving a bowl onto a plate">
+      <div class="text-small episode-detail" data-caption></div>
+    </div>
+    <div>
+      <div data-action-title>Behavior-cloning target · normalized controller inputs</div>
+      <div class="command-scale text-small"><span>−1</span><span>0</span><span>+1</span></div>
+      <div data-actions role="group" aria-label="Seven recorded action components"></div>
+      <div class="text-small" data-gripper></div>
+    </div>
+  </div>
+  <div class="episode-detail">
+    <label class="form-label" for="stage2-row">Stored row <span class="tabular-nums" data-row-label></span></label>
+    <input class="form-range" id="stage2-row" type="range" min="0" max="89" value="0" step="1">
+    <div class="viz-row"><button class="btn" data-prev type="button">Previous row</button><button class="btn" data-next type="button">Next row</button></div>
+    <div class="text-small episode-detail" aria-live="polite" data-status></div>
+  </div>
+  <script type="application/json" id="stage2-episode-data">__EPISODE_DATA__</script>
+  <script>
+  (() => {
+    const root = document.getElementById('stage2-recorded-episode');
+    const data = JSON.parse(root.querySelector('#stage2-episode-data').textContent);
+    const slider = root.querySelector('#stage2-row');
+    slider.max = data.actions.length - 1;
+    const labels = ['dx','dy','dz','dRx','dRy','dRz','Gripper'];
+    const rows = labels.map(label => {
+      const el = document.createElement('div'); el.className = 'command-row';
+      el.innerHTML = '<span></span><div class="command-track"><div class="command-zero"></div><div class="command-mark"></div></div><span class="tabular-nums text-end"></span>';
+      el.children[0].textContent = label;
+      root.querySelector('[data-actions]').appendChild(el);
+      return el;
+    });
+    let row = 0;
+    function draw(next, save=false) {
+      row = Math.min(data.actions.length-1, Math.max(0, Math.round(Number(next)||0)));
+      slider.value = row;
+      root.querySelector('[data-image]').src = data.images[row];
+      root.querySelector('[data-caption]').textContent = 'demo_0 · stored image row ' + row + ' · original orientation';
+      root.querySelector('[data-row-label]').textContent = row + ' / ' + (data.actions.length-1);
+      const hasTarget = row < data.actions.length - 1;
+      const actionRow = hasTarget ? row + 1 : row;
+      const shownAction = data.actions[actionRow];
+      root.querySelector('[data-action-title]').textContent = hasTarget
+        ? 'Behavior-cloning target · action row ' + actionRow
+        : 'Preceding command · action row ' + actionRow;
+      shownAction.forEach((value,i) => {
+        const mark = rows[i].querySelector('.command-mark');
+        mark.style.left = (50 + Math.min(value,0)*50) + '%';
+        mark.style.width = Math.abs(value)*50 + '%';
+        rows[i].children[2].textContent = (value >= 0 ? '+' : '') + value.toFixed(3);
+        rows[i].setAttribute('aria-label', labels[i] + ': ' + value.toFixed(3));
+      });
+      const g=shownAction[6];
+      root.querySelector('[data-gripper]').textContent = 'Gripper intent: ' + (g>0?'close':g<0?'open':'hold target') + ' · measured finger positions: ' + data.fingers[row].map(v=>v.toFixed(4)).join(', ') + ' m';
+      root.querySelector('[data-status]').textContent = hasTarget
+        ? 'Verified: image/state row ' + row + ' was produced after action ' + row + '; its training target is the next command, action ' + actionRow + '.'
+        : 'Verified: the final stored observation has no following action, so it is excluded from behavior-cloning samples.';
+      root.querySelector('[data-prev]').disabled = row === 0;
+      root.querySelector('[data-next]').disabled = row === data.actions.length-1;
+      if(save && window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{task:'put_the_bowl_on_the_plate',demo:'demo_0',storedRow:row},privateContent:{row}}).catch(()=>{});
+    }
+    slider.addEventListener('input',()=>draw(slider.value));
+    slider.addEventListener('change',()=>draw(slider.value,true));
+    root.querySelector('[data-prev]').addEventListener('click',()=>draw(row-1,true));
+    root.querySelector('[data-next]').addEventListener('click',()=>draw(row+1,true));
+    window.addEventListener('openai:set_globals',e=>{const state=e.detail?.globals?.widgetState;if(state)draw(state.privateContent?.row??state.modelContent?.storedRow??0);});
+    draw(window.openai?.widgetState?.privateContent?.row??0);
+  })();
+  </script>
+</div>

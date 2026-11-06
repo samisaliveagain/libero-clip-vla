@@ -1,0 +1,6 @@
+{
+  "best_checkpoint": "D:\\CODE\\VLA\\outputs\\stage6\\ten_tasks_scratch\\checkpoints\\epoch06-val0.1332.ckpt",
+  "best_validation_loss": 0.1331569403409958,
+  "epochs_completed": 22,
+  "peak_allocated_mib": 1115.34619140625
+}

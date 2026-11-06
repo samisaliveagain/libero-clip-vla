@@ -1,0 +1,32 @@
+{
+  "manifest_version": 1,
+  "verified_on": "2026-09-20",
+  "dataset_file": "data/datasets/libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
+  "dataset_bytes": 468246288,
+  "dataset_sha256": "e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406",
+  "dataset_revision": "97773100c1474cd0d686ebd173cc0e4fd5442466",
+  "task": "put the bowl on the plate",
+  "episode_count": 50,
+  "stored_rows": 4669,
+  "alignment_status": "VERIFIED_POST_ACTION",
+  "stored_relationship": "state[k] -- action[k] --> observation[k] matches state[k+1]",
+  "training_pair": "(agentview_rgb[k], instruction, joint_states[k] + gripper_states[k]) -> actions[k+1]",
+  "valid_input_index_per_episode": "0 <= k <= T-2",
+  "drop_rule": [
+    "drop action[0] because its matching pre-action observation is absent",
+    "drop observation[T-1] because there is no following target action",
+    "never construct a pair across an episode boundary"
+  ],
+  "valid_training_samples": 4619,
+  "evidence": {
+    "proprioception_rows_compared": 4619,
+    "post_action_joint_rmse_max": 0.0,
+    "post_action_gripper_rmse_max": 0.0,
+    "rendered_image_rows_compared": 236,
+    "post_action_image_candidate_closer": 236,
+    "state_anchored_action_replay_success": "50/50",
+    "continuous_free_running_action_replay_success": "48/50"
+  },
+  "continuous_replay_limit": "The derived release omits five preceding steps and full controller accumulator state; small reconstruction and contact differences can compound.",
+  "full_report": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/all_episodes_replay_alignment.json"
+}

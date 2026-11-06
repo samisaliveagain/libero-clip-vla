@@ -1,0 +1,20 @@
+# Python 3.11. Install the CUDA PyTorch build separately; see docs/SETUP.md.
+numpy==1.23.5
+scipy==1.10.1
+numba==0.57.1
+opencv-python==4.6.0.66
+Pillow==9.5.0
+bddl==1.0.1
+future==0.18.2
+gym==0.25.2
+robosuite==1.4.0
+robomimic==0.2.0
+mujoco==2.3.7
+h5py==3.10.0
+termcolor==2.3.0
+easydict==1.9
+matplotlib==3.7.5
+cloudpickle==2.1.0
+PyYAML==6.0.2
+-r requirements-stage3.txt
+-r requirements-stage5.txt

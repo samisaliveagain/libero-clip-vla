@@ -1,0 +1,8 @@
+# Upstream attribution
+
+- **LIBERO**: [Lifelong-Robot-Learning/LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO), pinned at `8f1084e3132a39270c3a13ebe37270a43ece2a01`. Provided as a Git submodule. Its MIT license and notices remain in the upstream checkout.
+- **LIBERO demonstrations**: obtained from [yifengzhu-hf/LIBERO-datasets](https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets) at revision `97773100c1474cd0d686ebd173cc0e4fd5442466`. The unchanged ten-task Goal subset is mirrored separately at [Samisaliveagain/libero-goal-vla](https://huggingface.co/datasets/Samisaliveagain/libero-goal-vla), retaining upstream Apache-2.0 licensing and attribution. Manifests preserve the original file hashes and provenance. No HDF5 data is stored in GitHub.
+- **CLIP**: [openai/clip-vit-base-patch16](https://huggingface.co/openai/clip-vit-base-patch16), revision `57c216476eefef5ab752ec549e440a49ae4ae5f3`. Weights are downloaded separately, kept frozen, and not committed. The downloaded model card is preserved with the local model files.
+- **Simulation and learning libraries**: MuJoCo, robosuite, robomimic, PyTorch, Hugging Face Transformers, and Lightning provide the established simulation, data, model, and training infrastructure. Their respective package licenses apply.
+
+Demo videos were rendered from this project's policy rollouts in LIBERO/MuJoCo and show upstream robot/environment assets. No real-robot deployment is represented. Original project code and trained policy checkpoints are MIT licensed; this does not relicense third-party datasets, assets, or pretrained CLIP weights.

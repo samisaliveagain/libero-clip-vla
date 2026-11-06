@@ -1,0 +1,84 @@
+{
+  "checkpoint_sha256": "3731f123462be5bee742cfcb45a595386b68a5963150e1a7079328315eca36cf",
+  "successes": 55,
+  "rollouts": 200,
+  "tasks": [
+    {
+      "task": "put_the_bowl_on_the_plate",
+      "successes": 8,
+      "rollouts": 20,
+      "report": "put_the_bowl_on_the_plate_report.json",
+      "source": "outputs/stage7/heldout/put_the_bowl_on_the_plate/correct/report.json"
+    },
+    {
+      "task": "put_the_bowl_on_top_of_the_cabinet",
+      "successes": 14,
+      "rollouts": 20,
+      "report": "put_the_bowl_on_top_of_the_cabinet_report.json",
+      "source": "outputs/stage7/heldout/put_the_bowl_on_top_of_the_cabinet/correct/report.json"
+    },
+    {
+      "task": "open_the_middle_drawer_of_the_cabinet",
+      "successes": 0,
+      "rollouts": 20,
+      "report": "open_the_middle_drawer_of_the_cabinet_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/open_the_middle_drawer_of_the_cabinet/correct/report.json"
+    },
+    {
+      "task": "open_the_top_drawer_and_put_the_bowl_inside",
+      "successes": 0,
+      "rollouts": 20,
+      "report": "open_the_top_drawer_and_put_the_bowl_inside_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/open_the_top_drawer_and_put_the_bowl_inside/correct/report.json"
+    },
+    {
+      "task": "push_the_plate_to_the_front_of_the_stove",
+      "successes": 11,
+      "rollouts": 20,
+      "report": "push_the_plate_to_the_front_of_the_stove_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/push_the_plate_to_the_front_of_the_stove/correct/report.json"
+    },
+    {
+      "task": "put_the_bowl_on_the_stove",
+      "successes": 5,
+      "rollouts": 20,
+      "report": "put_the_bowl_on_the_stove_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/put_the_bowl_on_the_stove/correct/report.json"
+    },
+    {
+      "task": "put_the_cream_cheese_in_the_bowl",
+      "successes": 0,
+      "rollouts": 20,
+      "report": "put_the_cream_cheese_in_the_bowl_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/put_the_cream_cheese_in_the_bowl/correct/report.json"
+    },
+    {
+      "task": "put_the_wine_bottle_on_the_rack",
+      "successes": 1,
+      "rollouts": 20,
+      "report": "put_the_wine_bottle_on_the_rack_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/put_the_wine_bottle_on_the_rack/correct/report.json"
+    },
+    {
+      "task": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "successes": 14,
+      "rollouts": 20,
+      "report": "put_the_wine_bottle_on_top_of_the_cabinet_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/put_the_wine_bottle_on_top_of_the_cabinet/correct/report.json"
+    },
+    {
+      "task": "turn_on_the_stove",
+      "successes": 2,
+      "rollouts": 20,
+      "report": "turn_on_the_stove_report.json",
+      "source": "outputs/stage7/continuation_20261011/heldout/turn_on_the_stove/correct/report.json"
+    }
+  ],
+  "evaluation_complete": false,
+  "limitations": [
+    "One training seed",
+    "Eight-task extension selected after first two task outcomes were visible",
+    "Final image/proprioception ablations, novel visual/placement shifts, and contact taxonomy incomplete",
+    "Final reset states not asserted disjoint from demonstration starting states"
+  ]
+}

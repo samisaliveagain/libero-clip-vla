@@ -1,0 +1,367 @@
+{
+  "manifest_version": 1,
+  "generated_on": "2026-09-20",
+  "dataset_source": "yifengzhu-hf/LIBERO-datasets",
+  "dataset_revision": "97773100c1474cd0d686ebd173cc0e4fd5442466",
+  "alignment_status": "VERIFIED_POST_ACTION_IN_ONE_COMPLETE_DEMO_PER_INITIAL_TASK",
+  "training_pair": "(upright agentview_rgb[k], instruction, joint_states[k] + gripper_states[k]) -> actions[k+1]",
+  "valid_input_index_per_episode": "0 <= k <= T-2",
+  "image_contract": {
+    "source": "uint8 RGB [128,128,3], OpenGL bottom-left row origin",
+    "adapter": "vertical flip exactly once to upright top-left row origin",
+    "source_files_modified": false
+  },
+  "split": {
+    "seed": 20260920,
+    "algorithm": "numpy.default_rng(seed), one permutation per task in manifest order",
+    "ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "test": 0.1
+    },
+    "unit": "whole episode",
+    "per_task_counts": {
+      "train": 40,
+      "validation": 5,
+      "test": 5
+    },
+    "disjointness_verified": true
+  },
+  "duplicate_check": {
+    "fingerprint": "SHA-256(states bytes + actions bytes)",
+    "trajectories_checked": 150,
+    "exact_duplicate_groups": []
+  },
+  "proprioception_normalizer": {
+    "field_order": [
+      "joint_1",
+      "joint_2",
+      "joint_3",
+      "joint_4",
+      "joint_5",
+      "joint_6",
+      "joint_7",
+      "finger_1",
+      "finger_2"
+    ],
+    "fit_split": "train only",
+    "valid_input_rows_only": true,
+    "sample_count": 11739,
+    "mean": [
+      0.03880455072262319,
+      0.460453719594113,
+      0.03588002395345282,
+      -1.950722818083403,
+      -0.08777349318076942,
+      2.3015385192647417,
+      0.9720824773178266,
+      0.020181338282075096,
+      -0.0206915078961788
+    ],
+    "raw_std": [
+      0.06699301472377987,
+      0.28245499810600394,
+      0.11308625271607788,
+      0.3377000323281795,
+      0.0944079596556025,
+      0.25508306758240756,
+      0.2192513296003323,
+      0.016958688152702503,
+      0.016565783330564555
+    ],
+    "std": [
+      0.06699301472377987,
+      0.28245499810600394,
+      0.11308625271607788,
+      0.3377000323281795,
+      0.0944079596556025,
+      0.25508306758240756,
+      0.2192513296003323,
+      0.016958688152702503,
+      0.016565783330564555
+    ],
+    "epsilon_floor": 1e-06,
+    "npz": "outputs/stage2/proprio_normalization.npz"
+  },
+  "verification": {
+    "first_and_last_valid_sample_checked_for_every_episode": true,
+    "no_cross_episode_samples": true,
+    "action_domain": "stored normalized OSC_POSE commands; not z-scored",
+    "time": "20 Hz relative simulation time; no wall-clock timestamp claim"
+  },
+  "tasks": [
+    {
+      "task_id": "put_the_bowl_on_the_plate",
+      "instruction": "put the bowl on the plate",
+      "file": "data/datasets/libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
+      "bytes": 468246288,
+      "sha256": "e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406",
+      "episode_count": 50,
+      "stored_row_count": 4669,
+      "valid_sample_count": 4619,
+      "episode_length_min": 79,
+      "episode_length_max": 126,
+      "alignment_evidence": {
+        "episode": "demo_0",
+        "image_rows_compared": 89,
+        "post_action_image_candidate_closer": 89,
+        "post_action_proprioception_rmse": 0.0,
+        "free_running_replay_success": false,
+        "state_anchored_replay_success": true,
+        "report": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_replay_alignment.json"
+      },
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_1",
+            "demo_2",
+            "demo_3",
+            "demo_5",
+            "demo_6",
+            "demo_7",
+            "demo_8",
+            "demo_9",
+            "demo_10",
+            "demo_11",
+            "demo_12",
+            "demo_13",
+            "demo_14",
+            "demo_15",
+            "demo_16",
+            "demo_17",
+            "demo_18",
+            "demo_20",
+            "demo_21",
+            "demo_22",
+            "demo_23",
+            "demo_24",
+            "demo_25",
+            "demo_28",
+            "demo_29",
+            "demo_30",
+            "demo_31",
+            "demo_32",
+            "demo_33",
+            "demo_34",
+            "demo_35",
+            "demo_38",
+            "demo_39",
+            "demo_40",
+            "demo_42",
+            "demo_43",
+            "demo_44",
+            "demo_45",
+            "demo_46",
+            "demo_47"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 3737
+        },
+        "validation": {
+          "episodes": [
+            "demo_0",
+            "demo_26",
+            "demo_36",
+            "demo_48",
+            "demo_49"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 439
+        },
+        "test": {
+          "episodes": [
+            "demo_4",
+            "demo_19",
+            "demo_27",
+            "demo_37",
+            "demo_41"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 443
+        }
+      }
+    },
+    {
+      "task_id": "put_the_bowl_on_the_stove",
+      "instruction": "put the bowl on the stove",
+      "file": "data/datasets/libero_goal/put_the_bowl_on_the_stove_demo.hdf5",
+      "bytes": 509123820,
+      "sha256": "ff77d3bf0f89a147d423840ecbd842cd63c3c55aeead91f88dbc0917be473e99",
+      "episode_count": 50,
+      "stored_row_count": 5081,
+      "valid_sample_count": 5031,
+      "episode_length_min": 90,
+      "episode_length_max": 123,
+      "alignment_evidence": {
+        "episode": "demo_0",
+        "image_rows_compared": 93,
+        "post_action_image_candidate_closer": 93,
+        "post_action_proprioception_rmse": 0.0,
+        "free_running_replay_success": true,
+        "state_anchored_replay_success": true,
+        "report": "outputs/stage2/put_the_bowl_on_the_stove_demo/replay_alignment/demo_0_replay_alignment.json"
+      },
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_1",
+            "demo_3",
+            "demo_4",
+            "demo_5",
+            "demo_7",
+            "demo_8",
+            "demo_9",
+            "demo_12",
+            "demo_14",
+            "demo_16",
+            "demo_17",
+            "demo_18",
+            "demo_19",
+            "demo_20",
+            "demo_21",
+            "demo_22",
+            "demo_23",
+            "demo_24",
+            "demo_25",
+            "demo_26",
+            "demo_28",
+            "demo_29",
+            "demo_30",
+            "demo_31",
+            "demo_32",
+            "demo_33",
+            "demo_34",
+            "demo_35",
+            "demo_36",
+            "demo_38",
+            "demo_39",
+            "demo_40",
+            "demo_41",
+            "demo_42",
+            "demo_43",
+            "demo_44",
+            "demo_45",
+            "demo_47",
+            "demo_48",
+            "demo_49"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 4026
+        },
+        "validation": {
+          "episodes": [
+            "demo_2",
+            "demo_11",
+            "demo_15",
+            "demo_27",
+            "demo_46"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 523
+        },
+        "test": {
+          "episodes": [
+            "demo_0",
+            "demo_6",
+            "demo_10",
+            "demo_13",
+            "demo_37"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 482
+        }
+      }
+    },
+    {
+      "task_id": "put_the_bowl_on_top_of_the_cabinet",
+      "instruction": "put the bowl on top of the cabinet",
+      "file": "data/datasets/libero_goal/put_the_bowl_on_top_of_the_cabinet_demo.hdf5",
+      "bytes": 510414285,
+      "sha256": "e14c84ebc820a13ef9a92ca82a7f04bb299f0ee96dfe9cc907bab71aeb2683b2",
+      "episode_count": 50,
+      "stored_row_count": 5094,
+      "valid_sample_count": 5044,
+      "episode_length_min": 86,
+      "episode_length_max": 148,
+      "alignment_evidence": {
+        "episode": "demo_0",
+        "image_rows_compared": 90,
+        "post_action_image_candidate_closer": 90,
+        "post_action_proprioception_rmse": 0.0,
+        "free_running_replay_success": true,
+        "state_anchored_replay_success": true,
+        "report": "outputs/stage2/put_the_bowl_on_top_of_the_cabinet_demo/replay_alignment/demo_0_replay_alignment.json"
+      },
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_0",
+            "demo_1",
+            "demo_4",
+            "demo_5",
+            "demo_7",
+            "demo_8",
+            "demo_9",
+            "demo_10",
+            "demo_11",
+            "demo_12",
+            "demo_13",
+            "demo_14",
+            "demo_16",
+            "demo_17",
+            "demo_18",
+            "demo_20",
+            "demo_21",
+            "demo_22",
+            "demo_23",
+            "demo_24",
+            "demo_25",
+            "demo_27",
+            "demo_28",
+            "demo_29",
+            "demo_32",
+            "demo_34",
+            "demo_35",
+            "demo_36",
+            "demo_37",
+            "demo_38",
+            "demo_39",
+            "demo_40",
+            "demo_41",
+            "demo_42",
+            "demo_43",
+            "demo_44",
+            "demo_45",
+            "demo_46",
+            "demo_48",
+            "demo_49"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 3976
+        },
+        "validation": {
+          "episodes": [
+            "demo_3",
+            "demo_19",
+            "demo_30",
+            "demo_31",
+            "demo_33"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 554
+        },
+        "test": {
+          "episodes": [
+            "demo_2",
+            "demo_6",
+            "demo_15",
+            "demo_26",
+            "demo_47"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 514
+        }
+      }
+    }
+  ]
+}

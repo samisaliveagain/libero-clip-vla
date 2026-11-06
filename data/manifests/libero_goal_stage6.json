@@ -1,0 +1,942 @@
+{
+  "manifest_version": 2,
+  "generated_on": "2026-09-20",
+  "dataset_source": "yifengzhu-hf/LIBERO-datasets",
+  "dataset_revision": "97773100c1474cd0d686ebd173cc0e4fd5442466",
+  "alignment_status": "ALL_TASKS_REPLAY_AUDITED_ALL_EPISODE_PROPRIO_ALIGNMENT_CHECKED_FOR_ADDED_TASKS",
+  "training_pair": "(upright agentview_rgb[k], instruction, joint_states[k] + gripper_states[k]) -> actions[k+1]",
+  "valid_input_index_per_episode": "0 <= k <= T-2",
+  "image_contract": {
+    "source": "uint8 RGB [128,128,3], OpenGL bottom-left row origin",
+    "adapter": "vertical flip exactly once to upright top-left row origin",
+    "source_files_modified": false
+  },
+  "split": {
+    "seed": 20260920,
+    "algorithm": "numpy.default_rng(seed), one permutation per task in manifest order; added tasks: SHA256(task) first 32 bits XOR 20260920",
+    "ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "test": 0.1
+    },
+    "unit": "whole episode",
+    "per_task_counts": {
+      "train": 40,
+      "validation": 5,
+      "test": 5
+    },
+    "disjointness_verified": true
+  },
+  "duplicate_check": {
+    "trajectories_checked": 500,
+    "exact_duplicate_groups": []
+  },
+  "proprioception_normalizer": {
+    "field_order": [
+      "joint_1",
+      "joint_2",
+      "joint_3",
+      "joint_4",
+      "joint_5",
+      "joint_6",
+      "joint_7",
+      "finger_1",
+      "finger_2"
+    ],
+    "fit_split": "train only",
+    "valid_input_rows_only": true,
+    "sample_count": 11739,
+    "mean": [
+      0.03880455072262319,
+      0.460453719594113,
+      0.03588002395345282,
+      -1.950722818083403,
+      -0.08777349318076942,
+      2.3015385192647417,
+      0.9720824773178266,
+      0.020181338282075096,
+      -0.0206915078961788
+    ],
+    "raw_std": [
+      0.06699301472377987,
+      0.28245499810600394,
+      0.11308625271607788,
+      0.3377000323281795,
+      0.0944079596556025,
+      0.25508306758240756,
+      0.2192513296003323,
+      0.016958688152702503,
+      0.016565783330564555
+    ],
+    "std": [
+      0.06699301472377987,
+      0.28245499810600394,
+      0.11308625271607788,
+      0.3377000323281795,
+      0.0944079596556025,
+      0.25508306758240756,
+      0.2192513296003323,
+      0.016958688152702503,
+      0.016565783330564555
+    ],
+    "epsilon_floor": 1e-06,
+    "npz": "outputs/stage2/proprio_normalization.npz",
+    "reuse_note": "Original three-task training-only normalizer retained for warm-start compatibility; no validation/test fitting."
+  },
+  "verification": {
+    "first_and_last_valid_sample_checked_for_every_episode": true,
+    "no_cross_episode_samples": true,
+    "action_domain": "stored normalized OSC_POSE commands; not z-scored",
+    "time": "20 Hz relative simulation time; no wall-clock timestamp claim"
+  },
+  "tasks": [
+    {
+      "task_id": "put_the_bowl_on_the_plate",
+      "instruction": "put the bowl on the plate",
+      "file": "data/datasets/libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
+      "bytes": 468246288,
+      "sha256": "e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406",
+      "episode_count": 50,
+      "stored_row_count": 4669,
+      "valid_sample_count": 4619,
+      "episode_length_min": 79,
+      "episode_length_max": 126,
+      "alignment_evidence": {
+        "episode": "demo_0",
+        "image_rows_compared": 89,
+        "post_action_image_candidate_closer": 89,
+        "post_action_proprioception_rmse": 0.0,
+        "free_running_replay_success": false,
+        "state_anchored_replay_success": true,
+        "report": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_replay_alignment.json"
+      },
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_1",
+            "demo_2",
+            "demo_3",
+            "demo_5",
+            "demo_6",
+            "demo_7",
+            "demo_8",
+            "demo_9",
+            "demo_10",
+            "demo_11",
+            "demo_12",
+            "demo_13",
+            "demo_14",
+            "demo_15",
+            "demo_16",
+            "demo_17",
+            "demo_18",
+            "demo_20",
+            "demo_21",
+            "demo_22",
+            "demo_23",
+            "demo_24",
+            "demo_25",
+            "demo_28",
+            "demo_29",
+            "demo_30",
+            "demo_31",
+            "demo_32",
+            "demo_33",
+            "demo_34",
+            "demo_35",
+            "demo_38",
+            "demo_39",
+            "demo_40",
+            "demo_42",
+            "demo_43",
+            "demo_44",
+            "demo_45",
+            "demo_46",
+            "demo_47"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 3737
+        },
+        "validation": {
+          "episodes": [
+            "demo_0",
+            "demo_26",
+            "demo_36",
+            "demo_48",
+            "demo_49"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 439
+        },
+        "test": {
+          "episodes": [
+            "demo_4",
+            "demo_19",
+            "demo_27",
+            "demo_37",
+            "demo_41"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 443
+        }
+      }
+    },
+    {
+      "task_id": "put_the_bowl_on_the_stove",
+      "instruction": "put the bowl on the stove",
+      "file": "data/datasets/libero_goal/put_the_bowl_on_the_stove_demo.hdf5",
+      "bytes": 509123820,
+      "sha256": "ff77d3bf0f89a147d423840ecbd842cd63c3c55aeead91f88dbc0917be473e99",
+      "episode_count": 50,
+      "stored_row_count": 5081,
+      "valid_sample_count": 5031,
+      "episode_length_min": 90,
+      "episode_length_max": 123,
+      "alignment_evidence": {
+        "episode": "demo_0",
+        "image_rows_compared": 93,
+        "post_action_image_candidate_closer": 93,
+        "post_action_proprioception_rmse": 0.0,
+        "free_running_replay_success": true,
+        "state_anchored_replay_success": true,
+        "report": "outputs/stage2/put_the_bowl_on_the_stove_demo/replay_alignment/demo_0_replay_alignment.json"
+      },
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_1",
+            "demo_3",
+            "demo_4",
+            "demo_5",
+            "demo_7",
+            "demo_8",
+            "demo_9",
+            "demo_12",
+            "demo_14",
+            "demo_16",
+            "demo_17",
+            "demo_18",
+            "demo_19",
+            "demo_20",
+            "demo_21",
+            "demo_22",
+            "demo_23",
+            "demo_24",
+            "demo_25",
+            "demo_26",
+            "demo_28",
+            "demo_29",
+            "demo_30",
+            "demo_31",
+            "demo_32",
+            "demo_33",
+            "demo_34",
+            "demo_35",
+            "demo_36",
+            "demo_38",
+            "demo_39",
+            "demo_40",
+            "demo_41",
+            "demo_42",
+            "demo_43",
+            "demo_44",
+            "demo_45",
+            "demo_47",
+            "demo_48",
+            "demo_49"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 4026
+        },
+        "validation": {
+          "episodes": [
+            "demo_2",
+            "demo_11",
+            "demo_15",
+            "demo_27",
+            "demo_46"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 523
+        },
+        "test": {
+          "episodes": [
+            "demo_0",
+            "demo_6",
+            "demo_10",
+            "demo_13",
+            "demo_37"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 482
+        }
+      }
+    },
+    {
+      "task_id": "put_the_bowl_on_top_of_the_cabinet",
+      "instruction": "put the bowl on top of the cabinet",
+      "file": "data/datasets/libero_goal/put_the_bowl_on_top_of_the_cabinet_demo.hdf5",
+      "bytes": 510414285,
+      "sha256": "e14c84ebc820a13ef9a92ca82a7f04bb299f0ee96dfe9cc907bab71aeb2683b2",
+      "episode_count": 50,
+      "stored_row_count": 5094,
+      "valid_sample_count": 5044,
+      "episode_length_min": 86,
+      "episode_length_max": 148,
+      "alignment_evidence": {
+        "episode": "demo_0",
+        "image_rows_compared": 90,
+        "post_action_image_candidate_closer": 90,
+        "post_action_proprioception_rmse": 0.0,
+        "free_running_replay_success": true,
+        "state_anchored_replay_success": true,
+        "report": "outputs/stage2/put_the_bowl_on_top_of_the_cabinet_demo/replay_alignment/demo_0_replay_alignment.json"
+      },
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_0",
+            "demo_1",
+            "demo_4",
+            "demo_5",
+            "demo_7",
+            "demo_8",
+            "demo_9",
+            "demo_10",
+            "demo_11",
+            "demo_12",
+            "demo_13",
+            "demo_14",
+            "demo_16",
+            "demo_17",
+            "demo_18",
+            "demo_20",
+            "demo_21",
+            "demo_22",
+            "demo_23",
+            "demo_24",
+            "demo_25",
+            "demo_27",
+            "demo_28",
+            "demo_29",
+            "demo_32",
+            "demo_34",
+            "demo_35",
+            "demo_36",
+            "demo_37",
+            "demo_38",
+            "demo_39",
+            "demo_40",
+            "demo_41",
+            "demo_42",
+            "demo_43",
+            "demo_44",
+            "demo_45",
+            "demo_46",
+            "demo_48",
+            "demo_49"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 3976
+        },
+        "validation": {
+          "episodes": [
+            "demo_3",
+            "demo_19",
+            "demo_30",
+            "demo_31",
+            "demo_33"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 554
+        },
+        "test": {
+          "episodes": [
+            "demo_2",
+            "demo_6",
+            "demo_15",
+            "demo_26",
+            "demo_47"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 514
+        }
+      }
+    },
+    {
+      "task_id": "open_the_middle_drawer_of_the_cabinet",
+      "instruction": "open the middle drawer of the cabinet",
+      "file": "data/datasets/libero_goal/open_the_middle_drawer_of_the_cabinet_demo.hdf5",
+      "bytes": 702223367,
+      "sha256": "20252c7cf98cd7437061f7f200ae7b6cb6219fabbd53b4536dfaa8abda6ab737",
+      "episode_count": 50,
+      "stored_row_count": 7027,
+      "valid_sample_count": 6977,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_37",
+            "demo_7",
+            "demo_17",
+            "demo_40",
+            "demo_14",
+            "demo_27",
+            "demo_8",
+            "demo_20",
+            "demo_38",
+            "demo_46",
+            "demo_35",
+            "demo_30",
+            "demo_33",
+            "demo_2",
+            "demo_49",
+            "demo_0",
+            "demo_39",
+            "demo_4",
+            "demo_34",
+            "demo_11",
+            "demo_41",
+            "demo_47",
+            "demo_43",
+            "demo_29",
+            "demo_24",
+            "demo_23",
+            "demo_10",
+            "demo_1",
+            "demo_15",
+            "demo_25",
+            "demo_42",
+            "demo_22",
+            "demo_12",
+            "demo_31",
+            "demo_19",
+            "demo_16",
+            "demo_3",
+            "demo_5",
+            "demo_36",
+            "demo_32"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 5595
+        },
+        "validation": {
+          "episodes": [
+            "demo_9",
+            "demo_48",
+            "demo_28",
+            "demo_18",
+            "demo_26"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 737
+        },
+        "test": {
+          "episodes": [
+            "demo_6",
+            "demo_45",
+            "demo_21",
+            "demo_44",
+            "demo_13"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 645
+        }
+      },
+      "split_seed": 3613599036,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\open_the_middle_drawer_of_the_cabinet.json"
+    },
+    {
+      "task_id": "open_the_top_drawer_and_put_the_bowl_inside",
+      "instruction": "open the top drawer and put the bowl inside",
+      "file": "data/datasets/libero_goal/open_the_top_drawer_and_put_the_bowl_inside_demo.hdf5",
+      "bytes": 1017886342,
+      "sha256": "1b50d99a053a7e4547c9ae9ccd2e3cd762543d27be78f240f13440d7ae487ae8",
+      "episode_count": 50,
+      "stored_row_count": 10208,
+      "valid_sample_count": 10158,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_13",
+            "demo_38",
+            "demo_29",
+            "demo_49",
+            "demo_19",
+            "demo_41",
+            "demo_40",
+            "demo_26",
+            "demo_37",
+            "demo_18",
+            "demo_44",
+            "demo_5",
+            "demo_9",
+            "demo_28",
+            "demo_30",
+            "demo_0",
+            "demo_43",
+            "demo_48",
+            "demo_14",
+            "demo_22",
+            "demo_2",
+            "demo_21",
+            "demo_46",
+            "demo_35",
+            "demo_4",
+            "demo_17",
+            "demo_33",
+            "demo_27",
+            "demo_7",
+            "demo_20",
+            "demo_32",
+            "demo_45",
+            "demo_42",
+            "demo_23",
+            "demo_15",
+            "demo_34",
+            "demo_16",
+            "demo_8",
+            "demo_12",
+            "demo_11"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 8030
+        },
+        "validation": {
+          "episodes": [
+            "demo_3",
+            "demo_10",
+            "demo_24",
+            "demo_25",
+            "demo_36"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 1127
+        },
+        "test": {
+          "episodes": [
+            "demo_31",
+            "demo_39",
+            "demo_47",
+            "demo_1",
+            "demo_6"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 1001
+        }
+      },
+      "split_seed": 1259412356,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\open_the_top_drawer_and_put_the_bowl_inside.json"
+    },
+    {
+      "task_id": "push_the_plate_to_the_front_of_the_stove",
+      "instruction": "push the plate to the front of the stove",
+      "file": "data/datasets/libero_goal/push_the_plate_to_the_front_of_the_stove_demo.hdf5",
+      "bytes": 762855139,
+      "sha256": "36b4e1bced49d2f4ff6b2fce6b1596a63978e14199e2513cd0df71e127bf47a6",
+      "episode_count": 50,
+      "stored_row_count": 7638,
+      "valid_sample_count": 7588,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_48",
+            "demo_2",
+            "demo_41",
+            "demo_17",
+            "demo_7",
+            "demo_37",
+            "demo_42",
+            "demo_15",
+            "demo_18",
+            "demo_28",
+            "demo_23",
+            "demo_16",
+            "demo_3",
+            "demo_45",
+            "demo_36",
+            "demo_22",
+            "demo_9",
+            "demo_34",
+            "demo_30",
+            "demo_35",
+            "demo_20",
+            "demo_1",
+            "demo_13",
+            "demo_29",
+            "demo_39",
+            "demo_49",
+            "demo_32",
+            "demo_8",
+            "demo_6",
+            "demo_25",
+            "demo_5",
+            "demo_31",
+            "demo_14",
+            "demo_38",
+            "demo_12",
+            "demo_43",
+            "demo_11",
+            "demo_24",
+            "demo_19",
+            "demo_21"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 5994
+        },
+        "validation": {
+          "episodes": [
+            "demo_44",
+            "demo_46",
+            "demo_33",
+            "demo_0",
+            "demo_27"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 777
+        },
+        "test": {
+          "episodes": [
+            "demo_26",
+            "demo_47",
+            "demo_40",
+            "demo_10",
+            "demo_4"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 817
+        }
+      },
+      "split_seed": 3242842384,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\push_the_plate_to_the_front_of_the_stove.json"
+    },
+    {
+      "task_id": "put_the_cream_cheese_in_the_bowl",
+      "instruction": "put the cream cheese in the bowl",
+      "file": "data/datasets/libero_goal/put_the_cream_cheese_in_the_bowl_demo.hdf5",
+      "bytes": 535715512,
+      "sha256": "ee58a7d72c143a71bf1448674e70940ac7781c1d1bb10a1b0c7a5c69b26abbef",
+      "episode_count": 50,
+      "stored_row_count": 5349,
+      "valid_sample_count": 5299,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_49",
+            "demo_4",
+            "demo_30",
+            "demo_16",
+            "demo_6",
+            "demo_37",
+            "demo_36",
+            "demo_2",
+            "demo_17",
+            "demo_25",
+            "demo_31",
+            "demo_45",
+            "demo_34",
+            "demo_21",
+            "demo_32",
+            "demo_14",
+            "demo_47",
+            "demo_0",
+            "demo_42",
+            "demo_48",
+            "demo_46",
+            "demo_10",
+            "demo_40",
+            "demo_12",
+            "demo_41",
+            "demo_44",
+            "demo_27",
+            "demo_8",
+            "demo_23",
+            "demo_20",
+            "demo_11",
+            "demo_15",
+            "demo_1",
+            "demo_38",
+            "demo_19",
+            "demo_39",
+            "demo_33",
+            "demo_35",
+            "demo_7",
+            "demo_26"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 4324
+        },
+        "validation": {
+          "episodes": [
+            "demo_29",
+            "demo_24",
+            "demo_28",
+            "demo_43",
+            "demo_22"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 497
+        },
+        "test": {
+          "episodes": [
+            "demo_18",
+            "demo_3",
+            "demo_13",
+            "demo_9",
+            "demo_5"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 478
+        }
+      },
+      "split_seed": 1931266100,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\put_the_cream_cheese_in_the_bowl.json"
+    },
+    {
+      "task_id": "put_the_wine_bottle_on_the_rack",
+      "instruction": "put the wine bottle on the rack",
+      "file": "data/datasets/libero_goal/put_the_wine_bottle_on_the_rack_demo.hdf5",
+      "bytes": 878958730,
+      "sha256": "f9092aa70734fc4083e97fc58c3ba25f87c614d18326182ddc7a455f0ab4da2e",
+      "episode_count": 50,
+      "stored_row_count": 8808,
+      "valid_sample_count": 8758,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_46",
+            "demo_31",
+            "demo_17",
+            "demo_20",
+            "demo_34",
+            "demo_26",
+            "demo_39",
+            "demo_22",
+            "demo_24",
+            "demo_11",
+            "demo_15",
+            "demo_6",
+            "demo_30",
+            "demo_43",
+            "demo_21",
+            "demo_40",
+            "demo_5",
+            "demo_36",
+            "demo_35",
+            "demo_23",
+            "demo_1",
+            "demo_25",
+            "demo_19",
+            "demo_14",
+            "demo_9",
+            "demo_27",
+            "demo_33",
+            "demo_44",
+            "demo_0",
+            "demo_13",
+            "demo_8",
+            "demo_3",
+            "demo_48",
+            "demo_47",
+            "demo_37",
+            "demo_4",
+            "demo_16",
+            "demo_10",
+            "demo_18",
+            "demo_28"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 7091
+        },
+        "validation": {
+          "episodes": [
+            "demo_38",
+            "demo_45",
+            "demo_12",
+            "demo_32",
+            "demo_29"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 861
+        },
+        "test": {
+          "episodes": [
+            "demo_7",
+            "demo_42",
+            "demo_49",
+            "demo_41",
+            "demo_2"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 806
+        }
+      },
+      "split_seed": 3256782809,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\put_the_wine_bottle_on_the_rack.json"
+    },
+    {
+      "task_id": "put_the_wine_bottle_on_top_of_the_cabinet",
+      "instruction": "put the wine bottle on top of the cabinet",
+      "file": "data/datasets/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet_demo.hdf5",
+      "bytes": 540179470,
+      "sha256": "7dc087a7596d5cbbe394f681b21a0be434438b0dca73ac430c293fe4c818404a",
+      "episode_count": 50,
+      "stored_row_count": 5394,
+      "valid_sample_count": 5344,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_13",
+            "demo_22",
+            "demo_31",
+            "demo_6",
+            "demo_18",
+            "demo_11",
+            "demo_24",
+            "demo_37",
+            "demo_20",
+            "demo_30",
+            "demo_15",
+            "demo_43",
+            "demo_47",
+            "demo_36",
+            "demo_21",
+            "demo_16",
+            "demo_32",
+            "demo_3",
+            "demo_0",
+            "demo_46",
+            "demo_41",
+            "demo_33",
+            "demo_23",
+            "demo_27",
+            "demo_26",
+            "demo_9",
+            "demo_5",
+            "demo_2",
+            "demo_29",
+            "demo_1",
+            "demo_17",
+            "demo_7",
+            "demo_19",
+            "demo_35",
+            "demo_28",
+            "demo_25",
+            "demo_44",
+            "demo_34",
+            "demo_4",
+            "demo_8"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 4270
+        },
+        "validation": {
+          "episodes": [
+            "demo_39",
+            "demo_49",
+            "demo_38",
+            "demo_10",
+            "demo_48"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 514
+        },
+        "test": {
+          "episodes": [
+            "demo_12",
+            "demo_40",
+            "demo_42",
+            "demo_45",
+            "demo_14"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 560
+        }
+      },
+      "split_seed": 3834244426,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\put_the_wine_bottle_on_top_of_the_cabinet.json"
+    },
+    {
+      "task_id": "turn_on_the_stove",
+      "instruction": "turn on the stove",
+      "file": "data/datasets/libero_goal/turn_on_the_stove_demo.hdf5",
+      "bytes": 447509922,
+      "sha256": "387fc10747696b80dea6ed8d7f2beaa162bf92ae11750b241073cbd33aac73d5",
+      "episode_count": 50,
+      "stored_row_count": 4460,
+      "valid_sample_count": 4410,
+      "splits": {
+        "train": {
+          "episodes": [
+            "demo_43",
+            "demo_33",
+            "demo_34",
+            "demo_23",
+            "demo_13",
+            "demo_12",
+            "demo_26",
+            "demo_37",
+            "demo_4",
+            "demo_46",
+            "demo_44",
+            "demo_41",
+            "demo_5",
+            "demo_2",
+            "demo_36",
+            "demo_19",
+            "demo_1",
+            "demo_27",
+            "demo_47",
+            "demo_30",
+            "demo_20",
+            "demo_11",
+            "demo_35",
+            "demo_18",
+            "demo_49",
+            "demo_29",
+            "demo_15",
+            "demo_22",
+            "demo_7",
+            "demo_24",
+            "demo_45",
+            "demo_6",
+            "demo_0",
+            "demo_3",
+            "demo_9",
+            "demo_25",
+            "demo_40",
+            "demo_28",
+            "demo_17",
+            "demo_31"
+          ],
+          "episode_count": 40,
+          "valid_sample_count": 3529
+        },
+        "validation": {
+          "episodes": [
+            "demo_16",
+            "demo_32",
+            "demo_21",
+            "demo_42",
+            "demo_8"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 432
+        },
+        "test": {
+          "episodes": [
+            "demo_39",
+            "demo_10",
+            "demo_14",
+            "demo_38",
+            "demo_48"
+          ],
+          "episode_count": 5,
+          "valid_sample_count": 449
+        }
+      },
+      "split_seed": 1667409859,
+      "alignment_evidence": "D:\\CODE\\VLA\\outputs\\stage6\\data_audit\\turn_on_the_stove.json"
+    }
+  ],
+  "parent_manifest_sha256": "5cf982d76ec3e13dc5739136de15a954270b86fd9cd648ca73794f4cff6c643c"
+}

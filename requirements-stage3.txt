@@ -1,0 +1,5 @@
+# Add to the verified Stage 1/2 virtual environment; do not replace torch/numpy.
+transformers==4.49.0
+huggingface-hub==0.29.3
+safetensors==0.5.3
+tokenizers==0.21.1

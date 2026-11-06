@@ -1,0 +1,2 @@
+# Add to the existing pinned environment. Do not replace the CUDA torch build.
+lightning==2.5.3
