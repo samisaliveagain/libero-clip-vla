@@ -3,7 +3,7 @@
   "dataset": {
     "repo_id": "Samisaliveagain/libero-goal-vla",
     "repo_type": "dataset",
-    "revision": "6d65b763f385efd1b1d19fa0a25b9aa05379adc7",
+    "revision": "862e1ead26998a722488b46a95af46d8f315b60f",
     "files": [
       {
         "path": "libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
@@ -70,7 +70,7 @@
   "model": {
     "repo_id": "Samisaliveagain/libero-clip-vla",
     "repo_type": "model",
-    "revision": "bd80556956521274aaaaafef5b07dd9b62fbf62f",
+    "revision": "161598db3a5ffa64194efe479db48578a4a5f3e0",
     "files": [
       {
         "path": "outputs/stage2/adapter_verification.json",
@@ -163,7 +163,7 @@
         "local_path": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_alignment_pre_stored_post_upright.png"
       },
       {
-        "path": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_free_running_action_replay.mp4",
+        "path": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_action_replay.mp4",
         "bytes": 91324,
         "sha256": "66f0eb74378147edd17f7ae41dd6c275c31baa97e83ee036c010f38a94e434ff",
         "local_path": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_free_running_action_replay.mp4"
@@ -421,7 +421,7 @@
         "local_path": "outputs/stage5/put_the_bowl_on_the_plate/baseline/train_stdout.log"
       },
       {
-        "path": "outputs/stage5/put_the_bowl_on_the_plate/baseline/training/version_0/hparams.yaml",
+        "path": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
         "bytes": 22,
         "sha256": "a889155af4d5b1f41eb12662ec0b9619307db3de3efda4a97de23f34cbd1deca",
         "local_path": "outputs/stage5/put_the_bowl_on_the_plate/baseline/training/version_0/hparams.yaml"
@@ -541,7 +541,7 @@
         "local_path": "outputs/stage5/put_the_bowl_on_the_plate/smoke/run_config.json"
       },
       {
-        "path": "outputs/stage5/put_the_bowl_on_the_plate/smoke/training/version_0/hparams.yaml",
+        "path": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
         "bytes": 22,
         "sha256": "a889155af4d5b1f41eb12662ec0b9619307db3de3efda4a97de23f34cbd1deca",
         "local_path": "outputs/stage5/put_the_bowl_on_the_plate/smoke/training/version_0/hparams.yaml"
@@ -571,7 +571,7 @@
         "local_path": "outputs/stage6/batch32_worker_smoke/run_config.json"
       },
       {
-        "path": "outputs/stage6/batch32_worker_smoke/training/version_0/hparams.yaml",
+        "path": "outputs/stage6/three_tasks_refine/training/version_0/hparams.yaml",
         "bytes": 23,
         "sha256": "f1b3429ece83af9c2fb90b3d6ab87ec8cf2062c54ac3f17da55664e7c0d03fb6",
         "local_path": "outputs/stage6/batch32_worker_smoke/training/version_0/hparams.yaml"
@@ -589,13 +589,13 @@
         "local_path": "outputs/stage6/batch32_worker_smoke_fixed/checkpoints/last.ckpt"
       },
       {
-        "path": "outputs/stage6/batch32_worker_smoke_fixed/run_config.json",
+        "path": "outputs/stage6/batch32_worker_smoke/run_config.json",
         "bytes": 871,
         "sha256": "f9b2881ea5f977b8747ce6f43e59a3cf604a0baaa27feb34248860f5aad9e6ec",
         "local_path": "outputs/stage6/batch32_worker_smoke_fixed/run_config.json"
       },
       {
-        "path": "outputs/stage6/batch32_worker_smoke_fixed/training/version_0/hparams.yaml",
+        "path": "outputs/stage6/three_tasks_refine/training/version_0/hparams.yaml",
         "bytes": 23,
         "sha256": "f1b3429ece83af9c2fb90b3d6ab87ec8cf2062c54ac3f17da55664e7c0d03fb6",
         "local_path": "outputs/stage6/batch32_worker_smoke_fixed/training/version_0/hparams.yaml"
@@ -2389,13 +2389,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/report.json"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000.mp4",
         "bytes": 227130,
         "sha256": "920729cb0d02fce3acb5930c20a0d72cb9aa0bf087f83f81bc65cffd6b42b1bc",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000_final.png",
         "bytes": 24404,
         "sha256": "31a23a9b429c0c69245113c0ce9e4eaf80cd2c1a664b84871b79cec291c6ae1d",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000_final.png"
@@ -2407,13 +2407,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_001.mp4",
         "bytes": 205639,
         "sha256": "54ef6f95c23caf7c9adf83498843e4f4819089134e9d8d7ea6fa874feeb93bad",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_001_final.png",
         "bytes": 24310,
         "sha256": "71a712fdb6faeee73bb4efcb892cef9cfb02b886722fcf65462859d6bf541e68",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001_final.png"
@@ -2425,13 +2425,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_002.mp4",
         "bytes": 207723,
         "sha256": "e2222c828df14b3d0471f88f66d33aaa62a2a026d2f9655c8a9dd140d1018e53",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_002_final.png",
         "bytes": 24875,
         "sha256": "95d665b830d69c3f5c4a8d4b68ecebeb7f2f1e1cfe956b2e3c7f885507df376e",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002_final.png"
@@ -2443,13 +2443,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_003.mp4",
         "bytes": 43327,
         "sha256": "fa1775f2d5c5dbc54a06bc73b317f4949d74f51789ae8db8b488d547e8929247",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_003_final.png",
         "bytes": 23250,
         "sha256": "4ed97fcf02c1bbe213d32792f28ba867eb606c0de892bc978b3ed9b5b095f6eb",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003_final.png"
@@ -2461,13 +2461,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_004.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_004.mp4",
         "bytes": 42113,
         "sha256": "3061efc121a9ab0e4a1b0b85462c2ab8a9e3012498ad2305030a4ac1a1e8c5e4",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_004.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_004_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_004_final.png",
         "bytes": 23585,
         "sha256": "8428bfc8270013eafa9ffae28e4caaef80d1a34827f4d8aa9822f6cdb9faed84",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_004_final.png"
@@ -2515,13 +2515,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_000_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_001.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_001.mp4",
         "bytes": 261040,
         "sha256": "a36da148aba7dd8b1596c5b07a55ee2b73f0809bfa99f19cad4bfe2a300e767e",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_001.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_001_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_001_final.png",
         "bytes": 23121,
         "sha256": "10dc3495dda0f37bd704eae085e131a868927a252608bf96294ba262f7efd5d2",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_001_final.png"
@@ -2551,13 +2551,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_002_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_003.mp4",
         "bytes": 182732,
         "sha256": "47863ad5c5c107dbe66a0adbe20aa45820e97e3e975db1f8f0fc262b214bc02f",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_003_final.png",
         "bytes": 22092,
         "sha256": "4cf6f8d72854deb24ca94a17fe70ebe9063563f2fc052b75162f92ce3311d772",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003_final.png"
@@ -2569,13 +2569,13 @@
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003_trace.npz"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_004.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_004.mp4",
         "bytes": 159108,
         "sha256": "1f62976bfeb71be6f5aba91cbf1a6833c1b97daa2ce096dc7de69dc97feefd74",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_004.mp4"
       },
       {
-        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_004_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_004_final.png",
         "bytes": 22083,
         "sha256": "c2008fd280aa184dae305e00830bfd0d64476b4eee9958a1c7de4dbb60bb4150",
         "local_path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_004_final.png"
@@ -3115,13 +3115,13 @@
         "local_path": "outputs/stage6/startup_diagnostic/settling_10_gripper_-1.png"
       },
       {
-        "path": "outputs/stage6/startup_diagnostic/settling_5_gripper_-1.png",
+        "path": "outputs/stage6/startup_diagnostic/settling_gripper_-1.png",
         "bytes": 21475,
         "sha256": "1d06307d3d30efb589e58c0832d0bc63a6c6c7775bb5f08f77adb9948c18a90a",
         "local_path": "outputs/stage6/startup_diagnostic/settling_5_gripper_-1.png"
       },
       {
-        "path": "outputs/stage6/startup_diagnostic/settling_5_gripper_0.png",
+        "path": "outputs/stage6/startup_diagnostic/settling_gripper_0.png",
         "bytes": 21486,
         "sha256": "1e50061cf24d00645f9bdb1c1eea81b1278ba8c5184543ba185055bfb5371abb",
         "local_path": "outputs/stage6/startup_diagnostic/settling_5_gripper_0.png"
@@ -3139,7 +3139,7 @@
         "local_path": "outputs/stage6/startup_diagnostic/settling_gripper_0.png"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/checkpoint.ckpt",
+        "path": "outputs/stage7/frozen_epoch06.ckpt",
         "bytes": 42775514,
         "sha256": "3731f123462be5bee742cfcb45a595386b68a5963150e1a7079328315eca36cf",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/checkpoint.ckpt"
@@ -3199,13 +3199,13 @@
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/report.json"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/reset_000.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000.mp4",
         "bytes": 227130,
         "sha256": "920729cb0d02fce3acb5930c20a0d72cb9aa0bf087f83f81bc65cffd6b42b1bc",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/reset_000.mp4"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/reset_000_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000_final.png",
         "bytes": 24404,
         "sha256": "31a23a9b429c0c69245113c0ce9e4eaf80cd2c1a664b84871b79cec291c6ae1d",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/reset_000_final.png"
@@ -3235,13 +3235,13 @@
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/report.json"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/reset_000.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_000.mp4",
         "bytes": 64332,
         "sha256": "465f0a3adb5f2346bffaf10588c8c18ef9fea1b6359120b46c8e2d12a14ffb82",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/reset_000.mp4"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/reset_000_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_000_final.png",
         "bytes": 22946,
         "sha256": "d5ea0a467c4c81f6456551e5bb682b264170c9cda6bddefed4ccc2edd3acb9b4",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/reset_000_final.png"
@@ -3271,13 +3271,13 @@
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/report.json"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/reset_000.mp4",
+        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_top_of_the_cabinet/correct/reset_000.mp4",
         "bytes": 49542,
         "sha256": "3153a90edc60fd60d9aafbed5bcd2443f78787b66634ecfe3a53fafc9512516c",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/reset_000.mp4"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/reset_000_final.png",
+        "path": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_top_of_the_cabinet/correct/reset_000_final.png",
         "bytes": 21868,
         "sha256": "3100f1e9032debda6ad3808fb13120bb364840ae73053989faf4b1b8cc89720b",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/reset_000_final.png"
@@ -3385,13 +3385,13 @@
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/report.json"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/reset_000.mp4",
+        "path": "outputs/stage6/ten_tasks_scratch/development/put_the_bowl_on_the_plate/correct/reset_000.mp4",
         "bytes": 139924,
         "sha256": "717f695a71bb708ddcc71e0836d6b46b88f368989cc0a969507ba3c1cb83352a",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/reset_000.mp4"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/reset_000_final.png",
+        "path": "outputs/stage6/ten_tasks_scratch/development/put_the_bowl_on_the_plate/correct/reset_000_final.png",
         "bytes": 22591,
         "sha256": "76566f5996975f19bc4f5a5d493f6b18dac78abc3c5c787e55f40e014a235c92",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/reset_000_final.png"
@@ -3421,13 +3421,13 @@
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/report.json"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/reset_000.mp4",
+        "path": "outputs/stage6/ten_tasks_scratch/language/put_the_bowl_on_the_plate/shuffled/reset_000.mp4",
         "bytes": 154716,
         "sha256": "c50a94c165f2f26833ddb8a347f94ac06bb1d59b868e19926f152be30908861c",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/reset_000.mp4"
       },
       {
-        "path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/reset_000_final.png",
+        "path": "outputs/stage6/ten_tasks_scratch/language/put_the_bowl_on_the_plate/shuffled/reset_000_final.png",
         "bytes": 21264,
         "sha256": "457db8df8eda9e5672886feced1fc828ed358615c1ec430c4d92f6a78f3fc84a",
         "local_path": "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/reset_000_final.png"
@@ -3523,7 +3523,7 @@
         "local_path": "outputs/stage6/ten_tasks_scratch/checkpoints/epoch03-val0.1345.ckpt"
       },
       {
-        "path": "outputs/stage6/ten_tasks_scratch/checkpoints/epoch06-val0.1332.ckpt",
+        "path": "outputs/stage7/frozen_epoch06.ckpt",
         "bytes": 42775514,
         "sha256": "3731f123462be5bee742cfcb45a595386b68a5963150e1a7079328315eca36cf",
         "local_path": "outputs/stage6/ten_tasks_scratch/checkpoints/epoch06-val0.1332.ckpt"
@@ -5083,7 +5083,7 @@
         "local_path": "outputs/stage6/ten_tasks_scratch/train.log"
       },
       {
-        "path": "outputs/stage6/ten_tasks_scratch/training/version_0/hparams.yaml",
+        "path": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
         "bytes": 22,
         "sha256": "a889155af4d5b1f41eb12662ec0b9619307db3de3efda4a97de23f34cbd1deca",
         "local_path": "outputs/stage6/ten_tasks_scratch/training/version_0/hparams.yaml"
@@ -5095,7 +5095,7 @@
         "local_path": "outputs/stage6/ten_tasks_scratch/training/version_0/metrics.csv"
       },
       {
-        "path": "outputs/stage6/ten_tasks_scratch/training/version_1/hparams.yaml",
+        "path": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
         "bytes": 22,
         "sha256": "a889155af4d5b1f41eb12662ec0b9619307db3de3efda4a97de23f34cbd1deca",
         "local_path": "outputs/stage6/ten_tasks_scratch/training/version_1/hparams.yaml"
@@ -5509,7 +5509,7 @@
         "local_path": "outputs/stage6/three_tasks_refine/checkpoints/epoch02-val0.2586.ckpt"
       },
       {
-        "path": "outputs/stage6/three_tasks_refine/checkpoints/last.ckpt",
+        "path": "outputs/stage6/three_tasks_refine/checkpoints/epoch02-val0.2586.ckpt",
         "bytes": 42775514,
         "sha256": "c9137cc293cd10c07b71a2611854757e6128a75f4ce72b14d33cea94741d4f2a",
         "local_path": "outputs/stage6/three_tasks_refine/checkpoints/last.ckpt"
@@ -5647,7 +5647,7 @@
         "local_path": "outputs/stage7/cabinet_blank.log"
       },
       {
-        "path": "outputs/stage7/continuation_20261011/completion.json",
+        "path": "outputs/stage7/continuation_20261011/status.json",
         "bytes": 621,
         "sha256": "1ecb5b0a7b823c32a9775dfe9457d2eb0496fe49c88ad5e14f2cb5b7e33fa2d7",
         "local_path": "outputs/stage7/continuation_20261011/completion.json"
@@ -9486,6 +9486,50 @@
         "sha256": "8b96cc4c2ba0289f4ee08ef329556c7c45667087a8e148b928254cbdfdca95f6",
         "local_path": "outputs/stage7/plate.log"
       }
-    ]
+    ],
+    "aliases": {
+      "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_free_running_action_replay.mp4": "outputs/stage2/put_the_bowl_on_the_plate_demo/replay_alignment/demo_0_action_replay.mp4",
+      "outputs/stage5/put_the_bowl_on_the_plate/baseline/training/version_0/hparams.yaml": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
+      "outputs/stage5/put_the_bowl_on_the_plate/smoke/training/version_0/hparams.yaml": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
+      "outputs/stage6/ten_tasks_scratch/training/version_0/hparams.yaml": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
+      "outputs/stage6/ten_tasks_scratch/training/version_1/hparams.yaml": "outputs/stage6/three_tasks/training/version_0/hparams.yaml",
+      "outputs/stage6/batch32_worker_smoke_fixed/run_config.json": "outputs/stage6/batch32_worker_smoke/run_config.json",
+      "outputs/stage6/batch32_worker_smoke/training/version_0/hparams.yaml": "outputs/stage6/three_tasks_refine/training/version_0/hparams.yaml",
+      "outputs/stage6/batch32_worker_smoke_fixed/training/version_0/hparams.yaml": "outputs/stage6/three_tasks_refine/training/version_0/hparams.yaml",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000.mp4": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000.mp4",
+      "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/reset_000.mp4": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_000_final.png": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000_final.png",
+      "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_plate/correct/reset_000_final.png": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_000_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001.mp4": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_001.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_001_final.png": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_001_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002.mp4": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_002.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_002_final.png": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_002_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003.mp4": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_003.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_003_final.png": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_003_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_004.mp4": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_004.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_plate/correct/reset_004_final.png": "outputs/stage6/candidate_epoch06_open/all_tasks/put_the_bowl_on_the_plate/correct/reset_004_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_001.mp4": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_001.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_001_final.png": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_001_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003.mp4": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_003.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_003_final.png": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_003_final.png",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_004.mp4": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_004.mp4",
+      "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_004_final.png": "outputs/stage6/candidate_epoch06_open/language/put_the_bowl_on_the_plate/shuffled/reset_004_final.png",
+      "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/reset_000.mp4": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_000.mp4",
+      "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_the_stove/correct/reset_000_final.png": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_the_stove/correct/reset_000_final.png",
+      "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/reset_000.mp4": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_top_of_the_cabinet/correct/reset_000.mp4",
+      "outputs/stage6/ten_tasks_probe_epoch06/open_startup/put_the_bowl_on_top_of_the_cabinet/correct/reset_000_final.png": "outputs/stage6/candidate_epoch06_open/paired_goals/put_the_bowl_on_top_of_the_cabinet/correct/reset_000_final.png",
+      "outputs/stage6/startup_diagnostic/settling_5_gripper_-1.png": "outputs/stage6/startup_diagnostic/settling_gripper_-1.png",
+      "outputs/stage6/startup_diagnostic/settling_5_gripper_0.png": "outputs/stage6/startup_diagnostic/settling_gripper_0.png",
+      "outputs/stage6/ten_tasks_probe_epoch06/checkpoint.ckpt": "outputs/stage7/frozen_epoch06.ckpt",
+      "outputs/stage6/ten_tasks_scratch/checkpoints/epoch06-val0.1332.ckpt": "outputs/stage7/frozen_epoch06.ckpt",
+      "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/reset_000.mp4": "outputs/stage6/ten_tasks_scratch/development/put_the_bowl_on_the_plate/correct/reset_000.mp4",
+      "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_plate/correct/reset_000_final.png": "outputs/stage6/ten_tasks_scratch/development/put_the_bowl_on_the_plate/correct/reset_000_final.png",
+      "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/reset_000.mp4": "outputs/stage6/ten_tasks_scratch/language/put_the_bowl_on_the_plate/shuffled/reset_000.mp4",
+      "outputs/stage6/ten_tasks_probe_epoch06/rollouts/put_the_bowl_on_the_stove/correct/reset_000_final.png": "outputs/stage6/ten_tasks_scratch/language/put_the_bowl_on_the_plate/shuffled/reset_000_final.png",
+      "outputs/stage6/three_tasks_refine/checkpoints/last.ckpt": "outputs/stage6/three_tasks_refine/checkpoints/epoch02-val0.2586.ckpt",
+      "outputs/stage7/continuation_20261011/completion.json": "outputs/stage7/continuation_20261011/status.json"
+    },
+    "unique_file_count": 1529,
+    "unique_bytes": 867299299
   }
 }

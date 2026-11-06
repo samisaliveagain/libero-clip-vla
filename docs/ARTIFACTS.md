@@ -6,7 +6,7 @@ The source repository stays small. Heavy files are versioned separately on Huggi
 | --- | --- | --- |
 | Ten original Goal HDF5 files (6.37 GB) | [Dataset repository](https://huggingface.co/datasets/Samisaliveagain/libero-goal-vla) | `data/datasets/libero_goal/` |
 | Selected frozen policy (42.8 MB) | [Model repository](https://huggingface.co/Samisaliveagain/libero-clip-vla/blob/main/outputs/stage7/frozen_epoch06.ckpt) | `outputs/stage7/frozen_epoch06.ckpt` |
-| All saved checkpoints, raw videos/traces, configs and logs (~1.00 GB) | [Experiment archive](https://huggingface.co/Samisaliveagain/libero-clip-vla/tree/main/outputs) | Original `outputs/stage2` through `outputs/stage7` paths |
+| Unique checkpoints, raw videos/traces, configs and logs (~0.87 GB) | [Experiment archive](https://huggingface.co/Samisaliveagain/libero-clip-vla/tree/main/outputs) | Original `outputs/stage2` through `outputs/stage7` paths |
 | Frozen CLIP backbone (~0.60 GB) | [Upstream model](https://huggingface.co/openai/clip-vit-base-patch16) | `data/models/clip-vit-base-patch16/` |
 
 ## Restore only what you need
@@ -29,3 +29,5 @@ The downloader restores files directly to their expected project paths and verif
 The selected checkpoint hash is `3731f123462be5bee742cfcb45a595386b68a5963150e1a7079328315eca36cf`. It is a project-produced Lightning checkpoint; use the project's custom loader rather than `AutoModel`. These checkpoints use PyTorch serialization and should only be loaded from a trusted source.
 
 The dataset remains the original LIBERO-Goal release, not newly collected data. Source revision, file hashes, audited temporal alignment, train/validation/test episode IDs, and training-only normalizers are preserved. See the dataset card for upstream attribution and licensing.
+
+Forty original experiment paths reference shared payloads stored once on Hugging Face. The restore manifest preserves all 1,569 logical experiment files while the current archive contains 1,529 unique files (867,299,299 bytes), including 18 unique checkpoint payloads for 21 original snapshot paths. Historical Hub revisions are retained for reproducibility.

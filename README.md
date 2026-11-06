@@ -20,7 +20,7 @@ Built and evaluated on native Windows with an RTX 4050 Laptop GPU (6 GB). This i
 | Repository | Contents |
 | --- | --- |
 | [GitHub: source and demos](https://github.com/samisaliveagain/libero-clip-vla) | Python code, setup, architecture, compact results, six videos, preview GIF |
-| [Hugging Face: trained policy and experiment artifacts](https://huggingface.co/Samisaliveagain/libero-clip-vla) | All 21 saved training checkpoints, raw evaluation videos/traces, logs, configs, SHA-256 inventory |
+| [Hugging Face: trained policy and experiment artifacts](https://huggingface.co/Samisaliveagain/libero-clip-vla) | 18 unique checkpoints with aliases for 21 original snapshot paths, raw evaluation videos/traces, logs, configs, SHA-256 inventory |
 | [Hugging Face: LIBERO-Goal data](https://huggingface.co/datasets/Samisaliveagain/libero-goal-vla) | Ten original HDF5 task files, audited episode splits and normalization metadata |
 
 The frozen CLIP backbone is downloaded from its existing [upstream Hugging Face repository](https://huggingface.co/openai/clip-vit-base-patch16) at the pinned revision, avoiding another copy in this project. LIBERO's simulation assets stay in its pinned upstream submodule.
